@@ -335,7 +335,7 @@ export default function App() {
   }
 
   return (
-    <div className='min-h-screen overflow-y-auto'>
+    <div className='min-h-screen bg-amber-50 overflow-y-auto '>
       {/* Header/Navbar Example */}
       <header className="bg-neutral-950 text-white  border-b border-border">
 
@@ -639,7 +639,7 @@ export default function App() {
 
 
       </div>
-
+ 
 
     </div>
   )
