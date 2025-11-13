@@ -1,0 +1,292 @@
+@import "tailwindcss";
+/* Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+@layer base {
+  :root {
+    /* Light theme - Background colors */
+    --color-bg-primary: 255 255 255; /* Main background - white */
+    --color-bg-secondary: 249 250 251; /* Secondary background - light gray */
+    --color-bg-tertiary: 243 244 246; /* Tertiary background - slightly darker gray */
+    --color-bg-card: 255 255 255; /* Card background - white with subtle shadow */
+    --color-bg-overlay: 0 0 0; /* Overlay background - black with opacity */
+
+    /* Light theme - Text colors */
+    --color-text-primary: 17 24 39; /* Main text - dark gray */
+    --color-text-secondary: 75 85 99; /* Secondary text - medium gray */
+    --color-text-tertiary: 107 114 128; /* Tertiary text - lighter gray */
+    --color-text-inverse: 255 255 255; /* Inverse text - white (for dark backgrounds) */
+
+    /* Light theme - Accent colors */
+    --color-accent: 59 130 246; /* Primary accent - blue */
+    --color-accent-hover: 37 99 235; /* Accent hover - darker blue */
+    --color-accent-light: 219 234 254; /* Light accent - light blue */
+
+    /* Light theme - Border colors */
+    --color-border: 229 231 235; /* Default border - light gray */
+    --color-border-light: 243 244 246; /* Light border - very light gray */
+    --color-border-dark: 209 213 219; /* Dark border - medium gray */
+
+    /* Light theme - Rating colors */
+    --color-rating-high: 34 197 94; /* High rating - green */
+    --color-rating-medium: 234 179 8; /* Medium rating - yellow */
+    --color-rating-low: 239 68 68; /* Low rating - red */
+
+    /* Light theme - Genre colors */
+    --color-genre-action: 239 68 68; /* Action - red */
+    --color-genre-drama: 99 102 241; /* Drama - indigo */
+    --color-genre-comedy: 234 179 8; /* Comedy - yellow */
+    --color-genre-horror: 139 92 246; /* Horror - purple */
+    --color-genre-scifi: 14 165 233; /* Sci-Fi - cyan */
+  }
+
+  .dark {
+    /* Dark theme - Background colors */
+    --color-bg-primary: 15 23 42; /* Main background - dark slate */
+    --color-bg-secondary: 30 41 59; /* Secondary background - medium slate */
+    --color-bg-tertiary: 51 65 85; /* Tertiary background - lighter slate */
+    --color-bg-card: 30 41 59; /* Card background - medium slate */
+    --color-bg-overlay: 0 0 0; /* Overlay background - black */
+
+    /* Dark theme - Text colors */
+    --color-text-primary: 248 250 252; /* Main text - almost white */
+    --color-text-secondary: 203 213 225; /* Secondary text - light gray */
+    --color-text-tertiary: 148 163 184; /* Tertiary text - medium gray */
+    --color-text-inverse: 15 23 42; /* Inverse text - dark (for light backgrounds) */
+
+    /* Dark theme - Accent colors */
+    --color-accent: 96 165 250; /* Primary accent - bright blue */
+    --color-accent-hover: 59 130 246; /* Accent hover - medium blue */
+    --color-accent-light: 30 58 138; /* Light accent - dark blue */
+
+    /* Dark theme - Border colors */
+    --color-border: 71 85 105; /* Default border - medium slate */
+    --color-border-light: 51 65 85; /* Light border - lighter slate */
+    --color-border-dark: 100 116 139; /* Dark border - lighter slate */
+
+    /* Dark theme - Rating colors */
+    --color-rating-high: 74 222 128; /* High rating - bright green */
+    --color-rating-medium: 250 204 21; /* Medium rating - bright yellow */
+    --color-rating-low: 248 113 113; /* Low rating - bright red */
+
+    /* Dark theme - Genre colors */
+    --color-genre-action: 248 113 113; /* Action - bright red */
+    --color-genre-drama: 129 140 248; /* Drama - bright indigo */
+    --color-genre-comedy: 250 204 21; /* Comedy - bright yellow */
+    --color-genre-horror: 167 139 250; /* Horror - bright purple */
+    --color-genre-scifi: 56 189 248; /* Sci-Fi - bright cyan */
+  }
+}
+
+/* Global */
+html {
+  min-height: 100%;
+}
+
+body {
+  height: calc(100vh - 8em);
+  font-family: "Anonymous Pro", monospace;
+}
+
+ /* Essential for TV Interfaces: Enhanced focus styles only in TV mode */
+ /* On desktop/mobile: standard focus styles */
+ .focusable:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+  transition: outline 0.2s;
+ }
+
+/* TV Mode: Large, highly visible focus indicators */
+.television-mode .focusable:focus {
+  outline: none; /* Remove default browser outline */
+  box-shadow: 0 0 0 6px #6366f1, 0 0 20px rgba(99, 102, 241, 0.8), 0 0 40px rgba(99, 102, 241, 0.4); /* Enhanced purple glow effect for TV */
+  transform: scale(1.05); /* Slight zoom effect on focus */
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 10; /* Ensure focused element is on top */
+  border-color: #6366f1 !important; /* Add border color for better visibility */
+}
+
+.focusable {
+  transition: transform 0.2s, box-shadow 0.2s, outline 0.2s;
+  position: relative;
+}
+
+/* TV Mode: Enhanced focus for buttons and inputs */
+.television-mode button.focusable:focus,
+.television-mode input.focusable:focus,
+.television-mode textarea.focusable:focus {
+  box-shadow: 0 0 0 8px #6366f1, 0 0 25px rgba(99, 102, 241, 0.9), 0 0 50px rgba(99, 102, 241, 0.5);
+}
+
+/* TV Mode: Enhanced focus for movie cards */
+.television-mode article.focusable:focus,
+.television-mode div.focusable:focus {
+  box-shadow: 0 0 0 8px #6366f1, 0 0 30px rgba(99, 102, 241, 1), 0 0 60px rgba(99, 102, 241, 0.6);
+  transform: scale(1.02);
+}
+
+.line-1 {
+  top: 50%;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 17em;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(calc(-50% - 30px));
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.7s ease-out 5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out 5.7s forwards;
+}
+
+/* Dialog overlay styling */
+#myDialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+#myDialog {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+
+.glass-card {
+  /*width: 240px;
+  height: 360px;*/
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 20px 10px rgba(255, 255, 255, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background-color: rgb(23, 23, 23);
+  border: 1px solid rgb(64, 64, 64);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  min-width: 180px;
+  padding: 6px 6px;
+  z-index: 50;
+  animation: fadeIn 0.2s ease-out;
+  list-style: none;
+  margin: 0;
+}
+
+.dropdown-item {
+  padding: 10px 16px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.dropdown-item:hover {
+  background-color: rgb(38, 38, 38);
+}
+
+.dropdown-item:focus {
+  background-color: rgb(38, 38, 38);
+  outline: 2px solid #6366f1;
+  outline-offset: -2px;
+}
+
+/* TV Mode: Enhanced dropdown focus */
+.television-mode .dropdown-item:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #6366f1, 0 0 15px rgba(99, 102, 241, 0.6);
+}
