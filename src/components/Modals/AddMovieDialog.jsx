@@ -18,7 +18,7 @@ const AddMovieDialog = ({ formDialogRef, showForm, setShowForm, menuButtonRef, i
             }}
         >
             <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 space-y-4  border-8 border-neutral-500 flex-col">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Add New Movie</h3>
+                <h3 className="text-2xl font-bold text-gray-900 ">Add New Movie</h3>
                 <form className='p-4'>
 
                     <label htmlFor='title' >Movie Title</label>

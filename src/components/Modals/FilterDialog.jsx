@@ -25,7 +25,7 @@ const FilterDialog = ({dialogRef, filterDialogOpen, setFilterDialogOpen, filterB
           >
             <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 space-y-4  border-8 border-neutral-500">
               <div className='flex flex-row  justify-between'>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">Filter Ratings</h3>
+                <h3 className="text-2xl font-bold text-gray-900 ">Filter Ratings</h3>
                 <button 
                   onClick={() => setMinRating(0)} 
                   className={`hover:underline ${isTelevision ? 'focusable' : ''}`}

@@ -5,76 +5,74 @@
 @layer base {
   :root {
     /* Light theme - Background colors */
-    --color-bg-primary: 255 255 255; /* Main background - white */
-    --color-bg-secondary: 249 250 251; /* Secondary background - light gray */
-    --color-bg-tertiary: 243 244 246; /* Tertiary background - slightly darker gray */
-    --color-bg-card: 255 255 255; /* Card background - white with subtle shadow */
-    --color-bg-overlay: 0 0 0; /* Overlay background - black with opacity */
-
+    --color-bg-primary: #ffffff; /* Main background - white */
+    --color-bg-secondary: #f9fafb; /* Secondary background - light gray */
+    --color-bg-tertiary: #f3f4f6; /* Tertiary background - slightly darker gray */
+    --color-bg-card: #ffffff; /* Card background - white with subtle shadow */
+    --color-bg-overlay: #000000; /* Overlay background - black with opacity */
     /* Light theme - Text colors */
-    --color-text-primary: 17 24 39; /* Main text - dark gray */
-    --color-text-secondary: 75 85 99; /* Secondary text - medium gray */
-    --color-text-tertiary: 107 114 128; /* Tertiary text - lighter gray */
-    --color-text-inverse: 255 255 255; /* Inverse text - white (for dark backgrounds) */
+    --color-text-primary: #111827; /* Main text - dark gray */
+    --color-text-secondary: #4b5563; /* Secondary text - medium gray */
+    --color-text-tertiary: #6b7280; /* Tertiary text - lighter gray */
+    --color-text-inverse: #ffffff; /* Inverse text - white (for dark backgrounds) */
 
     /* Light theme - Accent colors */
-    --color-accent: 59 130 246; /* Primary accent - blue */
-    --color-accent-hover: 37 99 235; /* Accent hover - darker blue */
-    --color-accent-light: 219 234 254; /* Light accent - light blue */
+    --color-accent: #3b82f6; /* Primary accent - blue */
+    --color-accent-hover: #2563eb; /* Accent hover - darker blue */
+    --color-accent-light: #dbeafe; /* Light accent - light blue */
 
     /* Light theme - Border colors */
-    --color-border: 229 231 235; /* Default border - light gray */
-    --color-border-light: 243 244 246; /* Light border - very light gray */
-    --color-border-dark: 209 213 219; /* Dark border - medium gray */
+    --color-border: #e5e7eb; /* Default border - light gray */
+    --color-border-light: #f3f4f6; /* Light border - very light gray */
+    --color-border-dark: #d1d5db; /* Dark border - medium gray */
 
     /* Light theme - Rating colors */
-    --color-rating-high: 34 197 94; /* High rating - green */
-    --color-rating-medium: 234 179 8; /* Medium rating - yellow */
-    --color-rating-low: 239 68 68; /* Low rating - red */
+    --color-rating-high: #22c55e; /* High rating - green */
+    --color-rating-medium: #eab308; /* Medium rating - yellow */
+    --color-rating-low: #ef4444; /* Low rating - red */
 
     /* Light theme - Genre colors */
-    --color-genre-action: 239 68 68; /* Action - red */
-    --color-genre-drama: 99 102 241; /* Drama - indigo */
-    --color-genre-comedy: 234 179 8; /* Comedy - yellow */
-    --color-genre-horror: 139 92 246; /* Horror - purple */
-    --color-genre-scifi: 14 165 233; /* Sci-Fi - cyan */
+    --color-genre-action: #ef4444; /* Action - red */
+    --color-genre-drama: #6366f1; /* Drama - indigo */
+    --color-genre-comedy: #eab308; /* Comedy - yellow */
+    --color-genre-horror: #8b5cf6; /* Horror - purple */
+    --color-genre-scifi: #0ea5e9; /* Sci-Fi - cyan */
   }
 
   .dark {
     /* Dark theme - Background colors */
-    --color-bg-primary: 15 23 42; /* Main background - dark slate */
-    --color-bg-secondary: 30 41 59; /* Secondary background - medium slate */
-    --color-bg-tertiary: 51 65 85; /* Tertiary background - lighter slate */
-    --color-bg-card: 30 41 59; /* Card background - medium slate */
-    --color-bg-overlay: 0 0 0; /* Overlay background - black */
-
+    --color-bg-primary: #0f172a; /* Main background - dark slate */
+    --color-bg-secondary: #1e293b; /* Secondary background - medium slate */
+    --color-bg-tertiary: #334155; /* Tertiary background - lighter slate */
+    --color-bg-card: #1e293b; /* Card background - medium slate */
+    --color-bg-overlay: #000000; /* Overlay background - black */
     /* Dark theme - Text colors */
-    --color-text-primary: 248 250 252; /* Main text - almost white */
-    --color-text-secondary: 203 213 225; /* Secondary text - light gray */
-    --color-text-tertiary: 148 163 184; /* Tertiary text - medium gray */
-    --color-text-inverse: 15 23 42; /* Inverse text - dark (for light backgrounds) */
+    --color-text-primary: #f8fafc; /* Main text - almost white */
+    --color-text-secondary: #cbd5e1; /* Secondary text - light gray */
+    --color-text-tertiary: #94a3b8; /* Tertiary text - medium gray */
+    --color-text-inverse: #0f172a; /* Inverse text - dark (for light backgrounds) */
 
     /* Dark theme - Accent colors */
-    --color-accent: 96 165 250; /* Primary accent - bright blue */
-    --color-accent-hover: 59 130 246; /* Accent hover - medium blue */
-    --color-accent-light: 30 58 138; /* Light accent - dark blue */
+    --color-accent: #60a5fa; /* Primary accent - bright blue */
+    --color-accent-hover: #3b82f6; /* Accent hover - medium blue */
+    --color-accent-light: #1e3a8a; /* Light accent - dark blue */
 
     /* Dark theme - Border colors */
-    --color-border: 71 85 105; /* Default border - medium slate */
-    --color-border-light: 51 65 85; /* Light border - lighter slate */
-    --color-border-dark: 100 116 139; /* Dark border - lighter slate */
+    --color-border: #475569; /* Default border - medium slate */
+    --color-border-light: #334155; /* Light border - lighter slate */
+    --color-border-dark: #64748b; /* Dark border - lighter slate */
 
     /* Dark theme - Rating colors */
-    --color-rating-high: 74 222 128; /* High rating - bright green */
-    --color-rating-medium: 250 204 21; /* Medium rating - bright yellow */
-    --color-rating-low: 248 113 113; /* Low rating - bright red */
+    --color-rating-high: #16a34a; /* High rating - bright green */
+    --color-rating-medium: #eab308; /* Medium rating - bright yellow */
+    --color-rating-low: #ef4444; /* Low rating - bright red */
 
     /* Dark theme - Genre colors */
-    --color-genre-action: 248 113 113; /* Action - bright red */
-    --color-genre-drama: 129 140 248; /* Drama - bright indigo */
-    --color-genre-comedy: 250 204 21; /* Comedy - bright yellow */
-    --color-genre-horror: 167 139 250; /* Horror - bright purple */
-    --color-genre-scifi: 56 189 248; /* Sci-Fi - bright cyan */
+    --color-genre-action: #ef4444; /* Action - bright red */
+    --color-genre-drama: #818cf8; /* Drama - bright indigo */
+    --color-genre-comedy: #facc15; /* Comedy - bright yellow */
+    --color-genre-horror: #a78bfa; /* Horror - bright purple */
+    --color-genre-scifi: #38bdf8; /* Sci-Fi - bright cyan */
   }
 }
 
@@ -293,4 +291,9 @@ body {
 .television-mode .dropdown-item:focus {
   outline: none;
   box-shadow: 0 0 0 4px #6366f1, 0 0 15px rgba(99, 102, 241, 0.6);
+}
+
+Link {
+  text-decoration: none;
+  color: inherit;
 }

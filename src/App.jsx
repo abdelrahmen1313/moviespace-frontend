@@ -8,6 +8,7 @@ import MoviesListHorizontal from './components/Lists/MoviesListHorizontal';
 import AppBar from './components/Sections/AppBar';
 
 import { handleKeyDown } from './utilities/handleKeyDown';
+import SearchBar from './components/SearchBar/SearchBar';
 
 
 
@@ -185,58 +186,25 @@ export default function App() {
   }
 
   return (
-    <div className='min-h-screen bg-amber-50/80 overflow-y-auto '>
-      {/* Header/Navbar Example */}
-      <header className="bg-neutral-950 text-white  border-b border-border">
+    <div className='min-h-screen bg-amber-50/80  '>
+     
 
-        <AppBar username={username} menuButtonRef={menuButtonRef} menuItemRef={menuItemRef}
+       <AppBar username={username} menuButtonRef={menuButtonRef} menuItemRef={menuItemRef}
           showMenu={showMenu} setShowMenu={setShowMenu}
           setShowForm={setShowForm} isTelevision={isTelevision}
         />
+      
 
-
-      </header>
-
-      <div className="bg-white/75 text-black inset-0  backdrop-filter backdrop-blur-sm bg-opacity-10  p-8 shadow-xl relative z-10">
-        <div className='flex flex-row space-x-4'>
-          <input
-            ref={searchInputRef}
-            type='text'
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                handleSearch();
-                searchInputRef.current?.blur();
-              }
-            }}
-            placeholder='Search for a movie'
-            className={`p-4 border border-gray-400 w-full ${isTelevision ? 'focusable' : ''}`}
-            tabIndex={0}
-          />
-          <button
-            ref={filterButtonRef}
-            onClick={() => {
-              setFilterDialogOpen(true);
-            }}
-            className={`px-4 py-2 bg-white border-neutral-800 border text-black rounded hover:border-xl hover:bg-amber-300 ${isTelevision ? 'focusable' : ''}`}
-            tabIndex={0}
-          >
-            Filter
-          </button>
-          <button
-            ref={searchButtonRef}
-            onClick={handleSearch}
-            className={`p-4 border-neutral-800 border text-white bg-neutral-800 hover:hover:bg-amber-300 hover:text-neutral-900 ${isTelevision ? 'focusable' : ''}`}
-            tabIndex={0}
-          >
-            Search
-          </button>
-        </div>
+      <div className="bg-white/75 text-black inset-0  backdrop-filter backdrop-blur-sm bg-opacity-10 
+       p-8 shadow-xl relative z-10">
+       <SearchBar searchInputRef={searchInputRef} searchQuery={searchQuery} setSearchQuery={setSearchQuery}
+          handleSearch={handleSearch} filterButtonRef={filterButtonRef} searchButtonRef={searchButtonRef}
+          isTelevision={isTelevision} setFilterDialogOpen={setFilterDialogOpen}
+        />
       </div>
-      <div className="container mx-auto px-4 py-8">
 
-        <h2 className="text-3xl font-bold text-primary mb-8">{searchEnabled ? "Search Results" : "All Movies"}</h2>
+      <main className="container mx-auto px-4 py-8">
+        <h2 className="text-3xl font-bold text-primary mb-8">{searchEnabled ? "Filtered Results" : "All Movies"}</h2>
         <MoviesListHorizontal
           filteredMovies={filteredMovies}
           movieCardRefs={movieCardRefs}
@@ -269,7 +237,7 @@ export default function App() {
             handleAddMovie={handleAddMovie}
           />
         }
-      </div>
+      </main>
     </div>
   )
 

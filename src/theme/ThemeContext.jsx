@@ -19,16 +19,25 @@ export function ThemeProvider({ children }) {
         };
 
         if (theme === "system") {
-            const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-            const isDark = mediaQuery.matches;
-            apply(isDark ? "dark" : "light");
+            const supportsMatchMedia = typeof window.matchMedia === "function" && window.matchMedia("(prefers-color-scheme: dark)").media !== "not all";
 
-            // Listen for system theme changes
-            const handleChange = (e) => {
-                apply(e.matches ? "dark" : "light");
-            };
-            mediaQuery.addEventListener("change", handleChange);
-            return () => mediaQuery.removeEventListener("change", handleChange);
+            if (supportsMatchMedia) {
+                const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+                apply(mediaQuery.matches ? "dark" : "light");
+
+                // Listen for system theme changes
+                const handleChange = (e) => {
+                    apply(e.matches ? "dark" : "light");
+                };
+                mediaQuery.addEventListener("change", handleChange);
+                return () => mediaQuery.removeEventListener("change", handleChange);
+            } else {
+                // Browser doesn't support prefers-color-scheme — fall back to client time
+                const now = new Date();
+                const hour = now.getHours();
+                const isNight = hour >= 21 || hour < 6; // 21:00 - 05:59 => dark
+                apply(isNight ? "dark" : "light");
+            }
         } else {
             apply(theme);
         }
