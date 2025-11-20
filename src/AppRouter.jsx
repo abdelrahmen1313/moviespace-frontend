@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import App from './App';
 import MoviePage from './pages/MoviePage';
+import ReduxWorkshop from './pages/ReduxWorkshop';
+import Posts from './pages/Posts';
 
 const Header = ({children}) => {
   return (
@@ -25,6 +27,8 @@ export default function AppRouter() {
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/movie/:id" element={<MoviePage />} />
+        <Route path="/Redux" element={<ReduxWorkshop /> } />
+        <Route path="Posts" element={<Posts />} />
       </Routes>
       </Header>
     </BrowserRouter>

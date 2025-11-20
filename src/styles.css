@@ -297,3 +297,177 @@ Link {
   text-decoration: none;
   color: inherit;
 }
+
+
+
+/* 1) Base input */
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="password"],
+textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 0.625rem 0.75rem; /* 10px x 12px */
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #111827;
+  font: 500 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+/* 2) Placeholder */
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* 3) Hover + focus states */
+input:hover,
+textarea:hover {
+  border-color: #9ca3af;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* 4) Disabled */
+input:disabled,
+textarea:disabled {
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* 5) Size variants */
+.input-sm { padding: 0.5rem 0.625rem; font-size: 13px; }
+.input-lg { padding: 0.75rem 0.875rem; font-size: 16px; }
+
+/* 6) State utilities */
+.input-success { border-color: #10b981; }
+.input-success:focus { box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18); }
+
+.input-warning { border-color: #f59e0b; }
+.input-warning:focus { box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18); }
+
+.input-error { border-color: #ef4444; }
+.input-error:focus { box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18); }
+
+/* 7) Dark mode */
+@media (prefers-color-scheme: dark) {
+  input[type="text"],
+  input[type="search"],
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    background: #0b0f14;
+    color: #e5e7eb;
+    border-color: #334155;
+  }
+  input::placeholder,
+  textarea::placeholder { color: #64748b; }
+  input:hover,
+  textarea:hover { border-color: #475569; }
+  input:focus,
+  textarea:focus { border-color: #60a5fa; box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.18); }
+}
+
+/* 8) Inline icon support */
+.input-with-icon {
+  position: relative;
+}
+.input-with-icon .input-icon {
+  position: absolute;
+  inset: 50% auto auto 0.75rem;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+.input-with-icon input {
+  padding-left: 2rem;
+}
+
+/* 9) Validation hint */
+.input-hint {
+  margin-top: 0.375rem;
+  font-size: 12px;
+  color: #6b7280;
+}
+.input-hint.error { color: #ef4444; }
+.input-hint.success { color: #10b981; }
+
+
+/* BUTTONS */
+
+/* 1) Base button */
+button,
+.btn {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem; /* 10px x 16px */
+  border: none;
+  border-radius: 0.5rem;
+  background: #2563eb; /* blue-600 */
+  color: #fff;
+  font: 600 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 120ms ease, box-shadow 160ms ease;
+}
+
+/* 2) Hover + active */
+button:hover,
+.btn:hover {
+  background: #1d4ed8; /* darker blue */
+}
+button:active,
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* 3) Focus ring */
+button:focus,
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+}
+
+/* 4) Disabled */
+button:disabled,
+.btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* 5) Variants */
+.btn-primary { background: #2563eb; color: #fff; }
+.btn-success { background: #10b981; color: #fff; }
+.btn-warning { background: #f59e0b; color: #fff; }
+.btn-danger  { background: #ef4444; color: #fff; }
+.btn-outline {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: #2563eb;
+}
+.btn-outline:hover { background: rgba(37, 99, 235, 0.08); }
+
+/* 6) Size utilities */
+.btn-sm { padding: 0.375rem 0.75rem; font-size: 13px; }
+.btn-lg { padding: 0.75rem 1.25rem; font-size: 16px; }
+
+/* 7) Icon-only buttons */
+.btn-icon {
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
